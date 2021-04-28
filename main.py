@@ -1,4 +1,4 @@
-import math, random
+import math
 import collections
 import pandas as pd
 import numpy as np
@@ -182,7 +182,7 @@ class Louvain:
         # print(partition_mat)
         print("******************    Saving    ******************")
         res = pd.DataFrame(partition_mat, columns=['id', 'category'])
-        res.to_csv("result.csv", index=False)
+        res.to_csv("data/result.csv", index=False)
         return partition_mat
  
     def label(self, partition_array, path_labels):  # return the clustered community partition matrix
@@ -204,11 +204,7 @@ class Louvain:
         transform = collections.defaultdict(int)  # the dict to make community belong to given five clusters
         for j in range(community_number):
             vote = np.mat(list(to_label[j].items())) # j-th community's voting matrix
-            if vote.shape[1]!=0: c = vote[np.argmax(vote[:,1]), 0]  
-            else: 
-                np.random.seed(521)
-                c = np.random.randint(5)
-                print("{} to {}".format(j, c))
+            c = vote[np.argmax(vote[:,1]), 0] if vote.shape[1]!=0 else 0 
             transform[j] = c
 
         for k in range(self.n):
