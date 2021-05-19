@@ -1,3 +1,6 @@
 python==3.8.3
 numpy==1.18.5
 pandas==1.0.5
+matplotlib==3.3.1  
+networkx==2.5
+community==0.15
