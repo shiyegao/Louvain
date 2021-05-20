@@ -54,7 +54,7 @@ class Louvain:
         part = self.gd(partition, path_labels)
         print("******************    Saving    ******************")
         res = pd.DataFrame(part, columns=['id', 'category'])
-        res.to_csv("result.csv", index=False)
+        res.to_csv("data/result.csv", index=False)
         return partition
         
     def test(self, path_reference, acc):
