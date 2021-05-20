@@ -7,7 +7,7 @@ ID: 518030910271
 + data: csv file containing edges, ground truth and so on
 + louvain.py
 + visual.py
-+ res.csv
++ result.csv
 
 # Installation
 ```bash
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 # Usage 
 
-If you want to use louvain, run
+If you want to use the pure louvain, run
 ```bash
 python louvain.py
 ```
